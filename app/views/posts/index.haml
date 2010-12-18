@@ -1,0 +1,13 @@
+=link_to "scrape", scrape_posts_path
+
+%table
+  -@potential_users.each_with_index do |potential_user, index|
+    %tr
+      %td
+        =index + 1
+      %td
+        =potential_user.email
+      %td
+        =potential_user.created_at
+      %td
+        =potential_user.type
