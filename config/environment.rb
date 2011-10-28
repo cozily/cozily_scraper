@@ -48,6 +48,6 @@ ActionMailer::Base.smtp_settings = {
         :port => 587,
         :domain => "cozi.ly",
         :authentication => :plain,
-        :user_name => "michael@cozi.ly",
-        :password => "thesham69"
+        :user_name => "notifications@cozi.ly",
+        :password => "marathon69"
 }
