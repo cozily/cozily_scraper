@@ -2,6 +2,6 @@ development:
   adapter: postgresql
   encoding: unicode
   database: cozily_scraper_development
-  host: localhost
-  username: cozily_scraper
+  pool: 5
+  username: todd
   password:
