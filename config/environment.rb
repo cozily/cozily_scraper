@@ -44,10 +44,10 @@ ActionMailer::Base.default_content_type = "text/html"
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
         :enable_starttls_auto => true,
-        :address => "smtp.gmail.com",
+        :address => "smtp.sendgrid.net",
         :port => 587,
         :domain => "cozi.ly",
         :authentication => :plain,
-        :user_name => "notifications@cozi.ly",
+        :user_name => "cozily",
         :password => "marathon69"
 }
