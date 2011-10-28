@@ -1,7 +1,6 @@
 source :gemcutter
 
 gem "aws-s3", "0.6.2"
-gem "bundler", "1.0.0"
 gem "cancan", "1.1.1"
 gem "clearance", "0.8.8"
 gem "compass", "0.10.2"
@@ -14,7 +13,8 @@ gem "httparty", "0.5.2"
 gem "mechanize", "1.0.0"
 gem "padlock", "0.1.0"
 gem "paperclip", "2.3.3"
-gem "pg", "0.9.0"
+gem "passenger"
+gem "pg"
 gem "rails", "2.3.9"
 gem "searchlogic", "2.4.19"
 gem "state_machine", "0.9.2"
