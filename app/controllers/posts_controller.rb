@@ -8,10 +8,9 @@ class PostsController < ApplicationController
   def scrape
     agent = Mechanize.new
     [
-            ['http://newyork.craigslist.org/abo/', 'lister'],
-            ['http://newyork.craigslist.org/sub/', 'lister'],
-            ['http://newyork.craigslist.org/hou/', 'finder']
-
+      # ['http://newyork.craigslist.org/hou/', 'finder'],
+      ['http://newyork.craigslist.org/abo/', 'lister'],
+      ['http://newyork.craigslist.org/sub/', 'lister']
     ].each do |uri, user|
       page = agent.get(uri)
       links = page.search('blockquote p a')
@@ -44,7 +43,7 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def email_one_remailer_user    
+  def email_one_remailer_user
     posts = Post.all(:conditions => ["email like ?", "%craigslist%"], :order => "created_at desc", :limit => 1000)
 
     user = PotentialUser.latest_remailer_user
