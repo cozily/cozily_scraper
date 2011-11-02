@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     urls_with_role = %w{mnh brk que brx stn}.map do |borough|
       # [["hou", "finder"], ["abo", "lister"], ["sub", "lister"]].map do |type, role|
       [["abo", "lister"], ["sub", "lister"]].map do |type, role|
-        ["#{type}/#{borough}", role]
+        ["#{borough}/#{type}", role]
       end
     end.flatten(1)
 
