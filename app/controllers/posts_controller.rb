@@ -7,12 +7,15 @@ class PostsController < ApplicationController
 
   def scrape
     agent = Mechanize.new
-    [
-      # ['http://newyork.craigslist.org/hou/', 'finder'],
-      ['http://newyork.craigslist.org/abo/', 'lister'],
-      ['http://newyork.craigslist.org/sub/', 'lister']
-    ].each do |uri, user|
-      page = agent.get(uri)
+    urls_with_role = %w{mnh brk que brx stn}.map do |borough|
+      # [["hou", "finder"], ["abo", "lister"], ["sub", "lister"]].map do |type, role|
+      [["abo", "lister"], ["sub", "lister"]].map do |type, role|
+        ["#{type}/#{borough}", role]
+      end
+    end.flatten(1)
+
+    urls_with_role.each do |path, user|
+      page = agent.get("http://newyork.craigslist.org/#{path}")
       links = page.search('blockquote p a')
 
       links.each do |link|
