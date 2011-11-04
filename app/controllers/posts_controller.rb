@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   def scrape
     agent = Mechanize.new
     urls_with_role = %w{mnh brk que brx stn}.map do |borough|
-      # [["hou", "finder"], ["abo", "lister"], ["sub", "lister"]].map do |type, role|
-      [["abo", "lister"], ["sub", "lister"]].map do |type, role|
+      [["hou", "finder"], ["abo", "lister"], ["sub", "lister"]].map do |type, role|
         ["#{borough}/#{type}", role]
       end
     end.flatten(1)
